@@ -3,71 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choose Your Authentication Method</title>
+    <title>Choose Preferred Authentication Method</title>
     <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        .selected-method {
+            border: 2px solid #007bff; /* Bootstrap primary color for consistency */
+            background-color: #e9ecef; /* Light grey background for slight emphasis */
+        }
+    </style>
 </head>
 <body>
 <div class="container py-5">
-    <h1 class="mb-3">Choose Your Authentication Method</h1>
-    <p class="mb-5">Please select at least two authentication methods. We advocate for the use of passkeys, a more secure alternative to passwords.</p>
+    <h1 class="mb-3">Choose Preferred Authentication Method</h1>
+    <p class="mb-5">Please select <b>at least two</b> authentication methods. We advocate for the use of passkeys, a more secure alternative to passwords.</p>
 
-    <div class="row row-cols-1 row-cols-md-2 g-4" aria-labelledby="auth-methods-heading">
-        <h2 id="auth-methods-heading" class="visually-hidden">Authentication Methods</h2>
-        <!-- Passkeys Option -->
+    <div id="selectedSummary" class="alert alert-info visually-hidden"></div>
+
+    <div class="row row-cols-1 row-cols-md-1 g-4" aria-labelledby="auth-methods-heading">
+        <h2 id="auth-methods-heading" class="visually-hidden">Authentication Methods</h2>        <!-- Passkeys Option -->
         <div class="col">
-            <div class="card h-100" onclick="toggleMethod('passkey');" style="cursor:pointer;">
+            <div class="card h-100 method-card" data-method="passkey" onclick="toggleMethod('passkey');" style="cursor:pointer;">
                 <div class="card-body d-flex flex-column">
                     <h3 class="h5 card-title">Passkeys</h3>
                     <p class="card-text">Use passkeys, a safer and easier way to log in without passwords.</p>
-                    <div id="passkey" class="visually-hidden">Selected</div>
                 </div>
             </div>
         </div>
         <!-- Biometric Options -->
-        <div class="w-100"></div> <!-- Break row here for layout purposes -->
-        <!-- Fingerprint -->
-        <div class="col">
-            <div class="card h-100" onclick="toggleMethod('fingerprint');" style="cursor:pointer;">
-                <div class="card-body d-flex flex-column">
-                    <h3 class="h5 card-title">Fingerprint</h3>
-                    <p class="card-text">Use your fingerprint for authentication.</p>
-                    <div id="fingerprint" class="visually-hidden">Selected</div>
+        <div class="row row-cols-1 row-cols-md-2 g-4" aria-labelledby="auth-methods-heading">
+            <!-- Fingerprint -->
+            <div class="col">
+                <div class="card h-100 method-card" data-method="fingerprint" onclick="toggleMethod('fingerprint');" style="cursor:pointer;">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="h5 card-title">Fingerprint</h3>
+                        <p class="card-text">Use your fingerprint for authentication.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Facial Recognition -->
-        <div class="col">
-            <div class="card h-100" onclick="toggleMethod('facial');" style="cursor:pointer;">
-                <div class="card-body d-flex flex-column">
-                    <h3 class="h5 card-title">Facial Recognition</h3>
-                    <p class="card-text">Use facial recognition for authentication.</p>
-                    <div id="facial" class="visually-hidden">Selected</div>
+            <!-- Facial Recognition -->
+            <div class="col">
+                <div class="card h-100 method-card" data-method="facial" onclick="toggleMethod('facial');" style="cursor:pointer;">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="h5 card-title">Facial Recognition</h3>
+                        <p class="card-text">Use facial recognition for authentication.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Recognition of Another Appendix -->
-        <div class="col">
-            <div class="card h-100" onclick="toggleMethod('appendix');" style="cursor:pointer;">
-                <div class="card-body d-flex flex-column">
-                    <h3 class="h5 card-title">Recognition of Another Appendix</h3>
-                    <p class="card-text">Use an appendix recognition (e.g., toeprint) for authentication.</p>
-                    <div id="appendix" class="visually-hidden">Selected</div>
+            <!-- Recognition of Another Appendix -->
+            <div class="col">
+                <div class="card h-100 method-card" data-method="appendix" onclick="toggleMethod('appendix');" style="cursor:pointer;">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="h5 card-title">Recognition of Another Appendix</h3>
+                        <p class="card-text">Use an appendix recognition (e.g.: toeprint) for authentication.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Voice Recognition -->
-        <div class="col">
-            <div class="card h-100" onclick="toggleMethod('voice');" style="cursor:pointer;">
-                <div class="card-body d-flex flex-column">
-                    <h3 class="h5 card-title">Voice Recognition</h3>
-                    <p class="card-text">Use voice recognition for authentication.</p>
-                    <div id="voice" class="visually-hidden">Selected</div>
+            <!-- Voice Recognition -->
+            <div class="col">
+                <div class="card h-100 method-card" data-method="voice" onclick="toggleMethod('voice');" style="cursor:pointer;">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="h5 card-title">Voice Recognition</h3>
+                        <p class="card-text">Use voice recognition for authentication.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <button class="btn btn-primary mt-4" onclick="verifySelection()">Confirm Selection</button>
+    <button id="confirmButton" class="btn btn-primary mt-4" disabled>Confirm Selection</button>
 
     <aside id="accessibility-help" class="mt-5">
         <h2>Accessibility Help</h2>

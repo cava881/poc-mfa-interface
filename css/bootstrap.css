@@ -12059,12 +12059,14 @@ textarea.form-control-lg {
   position: fixed;
   top: 0;
   right: 0;
-  width: 150px;
-  height: 300px;
+  width: 150px; /* Adjust as needed */
+  height: 250px; /* Adjust as needed */
   z-index: 1000;
   padding: 20px;
   transition: transform 0.3s ease-in-out;
+  border-radius: 5px;
 }
+
 
 /* Initially hidden on smaller screens */
 @media (max-width: 768px) {

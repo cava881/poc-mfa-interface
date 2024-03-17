@@ -13,21 +13,55 @@
 
     <div class="row row-cols-1 row-cols-md-2 g-4" aria-labelledby="auth-methods-heading">
         <h2 id="auth-methods-heading" class="visually-hidden">Authentication Methods</h2>
+        <!-- Passkeys Option -->
         <div class="col">
             <div class="card h-100" onclick="toggleMethod('passkey');" style="cursor:pointer;">
                 <div class="card-body d-flex flex-column">
                     <h3 class="h5 card-title">Passkeys</h3>
-                    <p class="card-text flex-grow-1">Use passkeys, a safer and easier way to log in without passwords.</p>
+                    <p class="card-text">Use passkeys, a safer and easier way to log in without passwords.</p>
                     <div id="passkey" class="visually-hidden">Selected</div>
                 </div>
             </div>
         </div>
+        <!-- Biometric Options -->
+        <div class="w-100"></div> <!-- Break row here for layout purposes -->
+        <!-- Fingerprint -->
         <div class="col">
-            <div class="card h-100" onclick="toggleMethod('biometric');" style="cursor:pointer;">
+            <div class="card h-100" onclick="toggleMethod('fingerprint');" style="cursor:pointer;">
                 <div class="card-body d-flex flex-column">
-                    <h3 class="h5 card-title">Biometric</h3>
-                    <p class="card-text flex-grow-1">Use biometric authentication if your device supports it.</p>
-                    <div id="biometric" class="visually-hidden">Selected</div>
+                    <h3 class="h5 card-title">Fingerprint</h3>
+                    <p class="card-text">Use your fingerprint for authentication.</p>
+                    <div id="fingerprint" class="visually-hidden">Selected</div>
+                </div>
+            </div>
+        </div>
+        <!-- Facial Recognition -->
+        <div class="col">
+            <div class="card h-100" onclick="toggleMethod('facial');" style="cursor:pointer;">
+                <div class="card-body d-flex flex-column">
+                    <h3 class="h5 card-title">Facial Recognition</h3>
+                    <p class="card-text">Use facial recognition for authentication.</p>
+                    <div id="facial" class="visually-hidden">Selected</div>
+                </div>
+            </div>
+        </div>
+        <!-- Recognition of Another Appendix -->
+        <div class="col">
+            <div class="card h-100" onclick="toggleMethod('appendix');" style="cursor:pointer;">
+                <div class="card-body d-flex flex-column">
+                    <h3 class="h5 card-title">Recognition of Another Appendix</h3>
+                    <p class="card-text">Use an appendix recognition (e.g., toeprint) for authentication.</p>
+                    <div id="appendix" class="visually-hidden">Selected</div>
+                </div>
+            </div>
+        </div>
+        <!-- Voice Recognition -->
+        <div class="col">
+            <div class="card h-100" onclick="toggleMethod('voice');" style="cursor:pointer;">
+                <div class="card-body d-flex flex-column">
+                    <h3 class="h5 card-title">Voice Recognition</h3>
+                    <p class="card-text">Use voice recognition for authentication.</p>
+                    <div id="voice" class="visually-hidden">Selected</div>
                 </div>
             </div>
         </div>
@@ -37,7 +71,7 @@
 
     <aside id="accessibility-help" class="mt-5">
         <h2>Accessibility Help</h2>
-        <p>For assistance with selecting an authentication method or if you encounter accessibility barriers, please contact our support team at <a href="mailto:support@example.com" class="text-decoration-underline">support@example.com</a> or call us at <a href="tel:+1234567890" class="text-decoration-underline">+1 (234) 567-890</a>.</p>
+        <p>For assistance with selecting an authentication method or if you encounter accessibility barriers, please contact our support team at <a href="mailto:support@example.com" class="text-decoration-underline">support@rp-domain.com</a> or call us at <a href="tel:+1234567890" class="text-decoration-underline">+1 (234) 567-890</a>.</p>
     </aside>
 </div>
 

@@ -12054,4 +12054,21 @@ textarea.form-control-lg {
   }
 }
 
-/*# sourceMappingURL=bootstrap.css.map */
+
+.nav.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  z-index: 1000;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Initially hidden on smaller screens */
+@media (max-width: 768px) {
+  .nav.sidebar {
+    transform: translateX(100%);
+  }
+}

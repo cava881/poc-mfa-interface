@@ -12060,7 +12060,7 @@ textarea.form-control-lg {
   top: 0;
   right: 0;
   width: 150px;
-  height: 150px;
+  height: 300px;
   z-index: 1000;
   padding: 20px;
   transition: transform 0.3s ease-in-out;
@@ -12071,4 +12071,23 @@ textarea.form-control-lg {
   .nav.sidebar {
     transform: translateX(100%);
   }
+}
+
+body.dark-mode {
+  background-color: #343a40; /* Darker background */
+  color: #ffffff; /* Light text */
+}
+
+.dark-mode .card {
+  background-color: #495057; /* Dark card backgrounds */
+  color: #ffffff; /* Light text for cards */
+}
+
+.dark-mode .btn-light {
+  background-color: #6c757d; /* Darker button background */
+  color: #ffffff; /* Light text for buttons */
+}
+
+.dark-mode .nav.sidebar {
+  background-color: #495057; /* Dark sidebar background */
 }

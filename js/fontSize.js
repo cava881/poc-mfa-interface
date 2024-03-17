@@ -20,7 +20,7 @@ document.getElementById('increaseFont').addEventListener('click', increaseFontSi
 document.getElementById('decreaseFont').addEventListener('click', decreaseFontSize);
 
 
-// sidebar FontSize
+// nav sidebar FontSize
 document.addEventListener("DOMContentLoaded", function() {
     const sidebar = document.querySelector('.nav.sidebar');
     let isSidebarVisible = true;

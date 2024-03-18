@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="container py-5">
+<div class="container py-4">
   <!-- nav sidebar -->
   <div class="nav sidebar">
     <div class="font-size-controls">
@@ -36,7 +36,7 @@
     <h2 id="auth-methods-heading" class="visually-hidden">Authentication Methods</h2>
     <!-- Passkey -->
     <div class="col">
-      <div class="card h-100 method-card" data-method="passkey" onclick="toggleMethod('passkey');"
+      <div class="card h-100 method-card" data-method="passkey" onclick="toggleMethod('passkey')"
            style="cursor:pointer;">
         <div class="card-body d-flex flex-column">
           <h3 class="h5 card-title">Passkey</h3>
@@ -67,14 +67,14 @@
         </div>
       </div>
     </div>
-    <!-- Facial Recognition -->
+    <!-- Face Recognition -->
     <div class="col">
-      <div class="card h-100 method-card" data-method="facial" onclick="toggleMethod('facial');"
+      <div class="card h-100 method-card" data-method="face" onclick="toggleMethod('face');"
            style="cursor:pointer;">
         <div class="card-body d-flex flex-column">
-          <h3 class="h5 card-title">Facial Recognition</h3>
+          <h3 class="h5 card-title">Face Recognition</h3>
           <p class="card-text">Use your face for authentication.</p>
-          <img src="icons/face-id.png" alt="Facial recognition Logo" style="width: 100px; height: 100px;">
+          <img src="icons/face-id.png" alt="Face recognition Logo" style="width: 100px; height: 100px;">
         </div>
       </div>
     </div>
@@ -122,6 +122,50 @@
         </div>
       </div>
     </div>
+    <!-- Authenticator App -->
+    <div class="col">
+      <div class="card h-100 method-card" data-method="auth-app" onclick="toggleMethod('auth-app');"
+           style="cursor:pointer;">
+        <div class="card-body d-flex flex-column">
+          <h3 class="h5 card-title">Authenticator App</h3>
+          <p class="card-text">Use the TOTP via your Authenticator app.</p>
+          <img src="icons/totp.png" alt="Authenticator Logo" style="width: 100px; height: 100px;">
+        </div>
+      </div>
+    </div>
+    <!-- Phone Call -->
+    <div class="col">
+      <div class="card h-100 method-card" data-method="phone" onclick="toggleMethod('phone');"
+           style="cursor:pointer;">
+        <div class="card-body d-flex flex-column">
+          <h3 class="h5 card-title">Phone Call</h3>
+          <p class="card-text">Receive a TOTP via phone call.</p>
+          <img src="icons/phone.png" alt="Phone Logo" style="width: 100px; height: 100px;">
+        </div>
+      </div>
+    </div>
+    <!-- Email -->
+    <div class="col">
+      <div class="card h-100 method-card" data-method="email" onclick="toggleMethod('email');"
+           style="cursor:pointer;">
+        <div class="card-body d-flex flex-column">
+          <h3 class="h5 card-title">Email</h3>
+          <p class="card-text">Receive a temporary code via registered email.</p>
+          <img src="icons/email.png" alt="Email Logo" style="width: 100px; height: 100px;">
+        </div>
+      </div>
+    </div>
+    <!-- Proxy Biometric -->
+    <div class="col">
+      <div class="card h-100 method-card" data-method="proxy" onclick="toggleMethod('proxy');"
+           style="cursor:pointer;">
+        <div class="card-body d-flex flex-column">
+          <h3 class="h5 card-title">Proxy Biometric</h3>
+          <p class="card-text">Use a trusted person's biometrics for authentication.</p>
+          <img src="icons/care.png" alt="Email Logo" style="width: 100px; height: 100px;">
+        </div>
+      </div>
+    </div>
   </div>
 
   <button id="confirmButton" class="btn btn-primary mt-4" onclick="verifySelection()" disabled>Confirm Selection
@@ -129,9 +173,9 @@
 
   <aside id="accessibility-help" class="mt-5">
     <h2>Accessibility Help</h2>
-    <p>For assistance with selecting an authentication method or if you encounter accessibility barriers, please
-      contact our support team at <a href="mailto:support@example.com" class="text-decoration-underline">support@rp-domain.com</a>
-      or call us at <a href="tel:+1234567890" class="text-decoration-underline">+1 (234) 567-890</a>.</p>
+    <p>For assistance with selecting an authentication method or if you encounter accessibility barriers, <br>please
+      contact our support team at <a href="mailto:support@rp-domain.ee" class="text-decoration-underline">support@rp-domain.ee</a>
+      or call us at <a href="tel:+372145689" class="text-decoration-underline">+372 145-689</a>.</p>
   </aside>
 </div>
 
@@ -142,4 +186,3 @@
 
 </body>
 </html>
-

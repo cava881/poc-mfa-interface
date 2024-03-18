@@ -1,22 +1,20 @@
 .selected-method {
-    border: 2px solid #007bff; /* Bootstrap primary color for consistency */
-    background-color: #e9ecef; /* Light grey background for slight emphasis */
+    border: 2px solid #007bff;
+    background-color: #e9ecef;
 }
 
 .nav.sidebar {
     position: fixed;
     top: 0;
     right: 0;
-    width: 150px; /* Adjust as needed */
-    height: 250px; /* Adjust as needed */
+    width: 150px;
+    height: 250px;
     z-index: 1000;
     padding: 20px;
     transition: transform 0.3s ease-in-out;
     border-radius: 5px;
 }
 
-
-/* Initially hidden on smaller screens */
 @media (max-width: 768px) {
     .nav.sidebar {
         transform: translateX(100%);
@@ -24,20 +22,20 @@
 }
 
 body.dark-mode {
-    background-color: #343a40; /* Darker background */
-    color: #ffffff; /* Light text */
+    background-color: #343a40;
+    color: #ffffff;
 }
 
 .dark-mode .card {
-    background-color: #495057; /* Dark card backgrounds */
-    color: #ffffff; /* Light text for cards */
+    background-color: #495057;
+    color: #ffffff;
 }
 
 .dark-mode .btn-light {
-    background-color: #6c757d; /* Darker button background */
-    color: #ffffff; /* Light text for buttons */
+    background-color: #6c757d;
+    color: #ffffff;
 }
 
 .dark-mode .nav.sidebar {
-    background-color: #495057; /* Dark sidebar background */
+    background-color: #495057;
 }

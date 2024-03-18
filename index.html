@@ -1,127 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choose Preferred Authentication Method</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Preferred Authentication Method</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="container py-5">
-    <!-- nav sidebar -->
-    <div class="nav sidebar">
-        <div class="font-size-controls">
-            <h4>Font Size:</h4>
-            <button id="increaseFont" class="btn btn-md btn-light">
-                <img src="icons/plus.png" alt="Increase font size" style="width: 24px; height: 24px;">
-            </button>
-            <button id="decreaseFont" class="btn btn-md btn-light">
-                <img src="icons/minus.png" alt="Decrease font size" style="width: 24px; height: 24px;">
-            </button>
-            <button id="darkModeToggle" class="btn btn-md btn-light mt-5">
-                Toggle Dark Mode
-            </button>
-        </div>
+  <!-- nav sidebar -->
+  <div class="nav sidebar">
+    <div class="font-size-controls">
+      <h4>Font Size:</h4>
+      <button id="increaseFont" class="btn btn-md btn-light">
+        <img src="icons/plus.png" alt="Increase font size" style="width: 24px; height: 24px;">
+      </button>
+      <button id="decreaseFont" class="btn btn-md btn-light">
+        <img src="icons/minus.png" alt="Decrease font size" style="width: 24px; height: 24px;">
+      </button>
+      <button id="darkModeToggle" class="btn btn-md btn-light mt-5">
+        Toggle Dark Mode
+      </button>
     </div>
+  </div>
 
-    <h1 class="mb-3">Choose Preferred Authentication Method</h1>
-    <p class="mb-5">Please select <b>at least two</b> authentication methods. <br>We advocate for the use of <strong>passkeys</strong>,
-        a
-        more secure alternative to passwords.</p>
+  <h1 class="mb-3">Choose Preferred Authentication Method</h1>
+  <p class="mb-5">Please select <b>at least two</b> authentication methods. <br>We advocate for the use of <strong>passkeys</strong>,
+    a
+    more secure alternative to passwords.</p>
 
-    <div id="selectedSummary" class="alert alert-info visually-hidden"></div>
+  <div id="selectedSummary" class="alert alert-info visually-hidden"></div>
 
-    <div class="row row-cols-1 row-cols-md-4 g-4" aria-labelledby="auth-methods-heading">
-        <!-- Passkey -->
-        <h2 id="auth-methods-heading" class="visually-hidden">Authentication Methods</h2>
-        <div class="col">
-            <div class="card h-100 method-card" data-method="passkey" onclick="toggleMethod('passkey');"
-                 style="cursor:pointer;">
-                <div class="card-body d-flex flex-column">
-                    <h3 class="h5 card-title">Passkey</h3>
-                    <p class="card-text">Use a passkey, a safer and easier way to log in without passwords.</p>
-                    <img src="icons/fido-passkey-black.svg" alt="Passkey Logo" style="width: 100px; height: 100px;">
-                </div>
-            </div>
+  <div class="row row-cols-1 row-cols-md-4 g-4" aria-labelledby="auth-methods-heading">
+    <h2 id="auth-methods-heading" class="visually-hidden">Authentication Methods</h2>
+    <!-- Passkey -->
+    <div class="col">
+      <div class="card h-100 method-card" data-method="passkey" onclick="toggleMethod('passkey');"
+           style="cursor:pointer;">
+        <div class="card-body d-flex flex-column">
+          <h3 class="h5 card-title">Passkey</h3>
+          <p class="card-text">Use a passkey, a safer and easier way to log in without passwords.</p>
+          <img src="icons/fido-passkey-black.svg" alt="Passkey Logo" style="width: 100px; height: 100px;">
         </div>
-        <!-- Fingerprint -->
-        <div class="col">
-            <div class="card h-100 method-card" data-method="fingerprint" onclick="toggleMethod('fingerprint');"
-                 style="cursor:pointer;">
-                <div class="card-body d-flex flex-column">
-                    <h3 class="h5 card-title">Fingerprint</h3>
-                    <p class="card-text">Use your fingerprint for authentication.</p>
-                    <img src="icons/fingerprint.png" alt="Fingerprint Logo" style="width: 100px; height: 100px;">
-                </div>
-            </div>
-        </div>
-        <!-- Facial Recognition -->
-        <div class="col">
-            <div class="card h-100 method-card" data-method="facial" onclick="toggleMethod('facial');"
-                 style="cursor:pointer;">
-                <div class="card-body d-flex flex-column">
-                    <h3 class="h5 card-title">Facial Recognition</h3>
-                    <p class="card-text">Use your face for authentication.</p>
-                    <img src="icons/face-id.png" alt="Facial recognition Logo" style="width: 100px; height: 100px;">
-                </div>
-            </div>
-        </div>
-        <!-- Security Key -->
-        <div class="col">
-            <div class="card h-100 method-card" data-method="key" onclick="toggleMethod('key');"
-                 style="cursor:pointer;">
-                <div class="card-body d-flex flex-column">
-                    <h3 class="h5 card-title">Security Key</h3>
-                    <p class="card-text">Use your security key for authentication.</p>
-                    <img src="icons/security-key.png" alt="Security key Logo" style="width: 100px; height: 100px;">
-                </div>
-            </div>
-        </div>
-        <!-- Retina Scan -->
-        <div class="col">
-            <div class="card h-100 method-card" data-method="retina" onclick="toggleMethod('retina');"
-                 style="cursor:pointer;">
-                <div class="card-body d-flex flex-column">
-                    <h3 class="h5 card-title">Retina Scan</h3>
-                    <p class="card-text">Use your retina for authentication.</p>
-                    <img src="icons/eye.png" alt="Retina scanner Logo" style="width: 100px; height: 100px;">
-                </div>
-            </div>
-        </div>
-        <!-- Toe-print -->
-        <div class="col">
-            <div class="card h-100 method-card" data-method="toe-print" onclick="toggleMethod('toe-print');"
-                 style="cursor:pointer;">
-                <div class="card-body d-flex flex-column">
-                    <h3 class="h5 card-title">Toe-print</h3>
-                    <p class="card-text">Use your toe-print for authentication.</p>
-                    <img src="icons/footprint.svg" alt="Toe-print Logo" style="width: 100px; height: 100px;">
-                </div>
-            </div>
-        </div>
-        <!-- Voice Recognition -->
-        <div class="col">
-            <div class="card h-100 method-card" data-method="voice" onclick="toggleMethod('voice');"
-                 style="cursor:pointer;">
-                <div class="card-body d-flex flex-column">
-                    <h3 class="h5 card-title">Voice Recognition</h3>
-                    <p class="card-text">Use voice for authentication.</p>
-                    <img src="icons/voice.png" alt="Voice Logo" style="width: 100px; height: 100px;">
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+    <!-- Password -->
+    <div class="col">
+      <div class="card h-100 method-card" data-method="password" onclick="toggleMethod('password');"
+           style="cursor:pointer;">
+        <div class="card-body d-flex flex-column">
+          <h3 class="h5 card-title">Password</h3>
+          <p class="card-text">Use a password for authentication.</p>
+          <img src="icons/password.svg" alt="Password Logo" style="width: 100px; height: 100px;">
+        </div>
+      </div>
+    </div>
+    <!-- Fingerprint -->
+    <div class="col">
+      <div class="card h-100 method-card" data-method="fingerprint" onclick="toggleMethod('fingerprint');"
+           style="cursor:pointer;">
+        <div class="card-body d-flex flex-column">
+          <h3 class="h5 card-title">Fingerprint</h3>
+          <p class="card-text">Use your fingerprint for authentication.</p>
+          <img src="icons/fingerprint.png" alt="Fingerprint Logo" style="width: 100px; height: 100px;">
+        </div>
+      </div>
+    </div>
+    <!-- Facial Recognition -->
+    <div class="col">
+      <div class="card h-100 method-card" data-method="facial" onclick="toggleMethod('facial');"
+           style="cursor:pointer;">
+        <div class="card-body d-flex flex-column">
+          <h3 class="h5 card-title">Facial Recognition</h3>
+          <p class="card-text">Use your face for authentication.</p>
+          <img src="icons/face-id.png" alt="Facial recognition Logo" style="width: 100px; height: 100px;">
+        </div>
+      </div>
+    </div>
+    <!-- Security Key -->
+    <div class="col">
+      <div class="card h-100 method-card" data-method="key" onclick="toggleMethod('key');"
+           style="cursor:pointer;">
+        <div class="card-body d-flex flex-column">
+          <h3 class="h5 card-title">Security Key</h3>
+          <p class="card-text">Use your security key for authentication.</p>
+          <img src="icons/security-key.png" alt="Security key Logo" style="width: 100px; height: 100px;">
+        </div>
+      </div>
+    </div>
+    <!-- Retina Scan -->
+    <div class="col">
+      <div class="card h-100 method-card" data-method="retina" onclick="toggleMethod('retina');"
+           style="cursor:pointer;">
+        <div class="card-body d-flex flex-column">
+          <h3 class="h5 card-title">Retina Scan</h3>
+          <p class="card-text">Use your retina for authentication.</p>
+          <img src="icons/eye.png" alt="Retina scanner Logo" style="width: 100px; height: 100px;">
+        </div>
+      </div>
+    </div>
+    <!-- Toe-print -->
+    <div class="col">
+      <div class="card h-100 method-card" data-method="toe-print" onclick="toggleMethod('toe-print');"
+           style="cursor:pointer;">
+        <div class="card-body d-flex flex-column">
+          <h3 class="h5 card-title">Toe-print</h3>
+          <p class="card-text">Use your toe-print for authentication.</p>
+          <img src="icons/footprint.svg" alt="Toe-print Logo" style="width: 100px; height: 100px;">
+        </div>
+      </div>
+    </div>
+    <!-- Voice Recognition -->
+    <div class="col">
+      <div class="card h-100 method-card" data-method="voice" onclick="toggleMethod('voice');"
+           style="cursor:pointer;">
+        <div class="card-body d-flex flex-column">
+          <h3 class="h5 card-title">Voice Recognition</h3>
+          <p class="card-text">Use voice for authentication.</p>
+          <img src="icons/voice.png" alt="Voice Logo" style="width: 100px; height: 100px;">
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <button id="confirmButton" class="btn btn-primary mt-4" onclick="verifySelection()" disabled>Confirm Selection
-    </button>
+  <button id="confirmButton" class="btn btn-primary mt-4" onclick="verifySelection()" disabled>Confirm Selection
+  </button>
 
-    <aside id="accessibility-help" class="mt-5">
-        <h2>Accessibility Help</h2>
-        <p>For assistance with selecting an authentication method or if you encounter accessibility barriers, please
-            contact our support team at <a href="mailto:support@example.com" class="text-decoration-underline">support@rp-domain.com</a>
-            or call us at <a href="tel:+1234567890" class="text-decoration-underline">+1 (234) 567-890</a>.</p>
-    </aside>
+  <aside id="accessibility-help" class="mt-5">
+    <h2>Accessibility Help</h2>
+    <p>For assistance with selecting an authentication method or if you encounter accessibility barriers, please
+      contact our support team at <a href="mailto:support@example.com" class="text-decoration-underline">support@rp-domain.com</a>
+      or call us at <a href="tel:+1234567890" class="text-decoration-underline">+1 (234) 567-890</a>.</p>
+  </aside>
 </div>
 
 <script src="js/bootstrap.js"></script>

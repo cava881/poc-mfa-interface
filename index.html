@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,10 +25,11 @@
     </div>
   </div>
 
-  <h1 class="mb-3">Choose Preferred Authentication Method</h1>
-  <p class="mb-5">Please select <b>at least two</b> authentication methods. <br>We advocate for the use of <strong>passkeys</strong>,
-    a
-    more secure alternative to passwords.</p>
+  <h1 class="mb-3">Choose Preferred Authentication Methods</h1>
+  <p class="mb-5">Please select <b>at least two</b> authentication methods.<br>
+    We suggest to use <b>Passkeys</b>, a safer alternative to passwords. Read more about it
+    <a href="https://passkeys.dev/">here</a>.<br>
+  </p>
 
   <div id="selectedSummary" class="alert alert-info visually-hidden"></div>
 
@@ -40,7 +41,7 @@
            style="cursor:pointer;">
         <div class="card-body d-flex flex-column">
           <h3 class="h5 card-title">Passkey</h3>
-          <p class="card-text">Use a passkey, a safer and easier way to log in without passwords.</p>
+          <p class="card-text">Use a passkey via WebAuthn to log in without passwords.</p>
           <img src="icons/fido-passkey-black.svg" alt="Passkey Logo" style="width: 100px; height: 100px;">
         </div>
       </div>

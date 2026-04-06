@@ -1,0 +1,29 @@
+alerts:
+- rule: DEPLOYMENT_FAILED
+- rule: DOMAIN_FAILED
+domains:
+- domain: poc-mfa-interface.cava881.xyz
+  type: PRIMARY
+features:
+- buildpack-stack=ubuntu-22
+ingress:
+  rules:
+  - component:
+      name: cava-881-poc-mfa-interface
+    match:
+      authority:
+        exact: ""
+      path:
+        prefix: /
+name: poc-mfa-interface
+region: fra
+services:
+- http_port: 80
+  image:
+    registry: cava881
+    registry_type: DOCKER_HUB
+    repository: poc-mfa-interface
+    tag: latest
+  instance_count: 1
+  instance_size_slug: apps-s-1vcpu-0.5gb
+  name: cava-881-poc-mfa-interface

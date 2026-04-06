@@ -32,8 +32,8 @@ jobs:
         platforms: linux/amd64,linux/arm64
         tags: ${{ vars.DOCKERHUB_USERNAME }}/poc-mfa-interface:latest
     - name: Deploy the app
-        uses: digitalocean/app_action/deploy@v2
-        env:
-          SAMPLE_DIGEST: ${{ steps.push.outputs.digest }}
-        with:
-          token: ${{ secrets.DIGITALOCEAN_TOKEN }}
+      uses: digitalocean/app_action/deploy@v2
+      env:
+        SAMPLE_DIGEST: ${{ steps.push.outputs.digest }}
+      with:
+        token: ${{ secrets.DIGITALOCEAN_TOKEN }}
